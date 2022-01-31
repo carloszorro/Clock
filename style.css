@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+
+}
+
+.clock {
+    width: 20vw;
+    height: 20vw;
+    background: linear-gradient(180deg, #191970, #8FD8D8);
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.clock__numbers {
+    width: 96%;
+    height: auto;
+    clip-path: circle(50% at 50% 50%);
+    padding: 2% 0;
+    margin: 2%;
+    background-color: #00ffff;
+}
+
+.dial {
+    background-color: #4A777A;
+    width: 4%;
+    height: 4%;
+    clip-path: circle(50% at 50% 50%);
+    position: absolute;
+    left: 48%;
+    align-self: center;
+    z-index: 3;
+}
+
+.line {
+    display: inline-block;
+}
+
+@keyframes minute-second {
+   to {
+    transform: rotate(360deg);
+   } 
+}
+
+@keyframes hour {
+    to {
+        transform: rotate(30deg);
+    }
+}
+
+.minute-hand {
+    position: absolute;
+    right: 49%;
+    top: 10%;
+    height: 40%;
+    width: 2%;
+    background: linear-gradient(#4A777A, #28FEF3);
+    transform-origin: bottom;
+    animation: minute-second 3600s linear infinite;
+    z-index: 2;
+}
+
+.hour-hand {
+    position: absolute;
+    right: 48%;
+    top: 20%;
+    height: 30%;
+    width: 4%;
+    background: linear-gradient(#8B4513, #CD5C5C, #FDF0E7);
+    transform-origin: bottom;
+    animation: hour 216000s linear infinite;
+    z-index: 1;
+}
+
+.second-hand {
+    position: absolute;
+    right: 49.5%;
+    height: 50%;
+    width: 1%;
+    background-color: #191970;
+    transform-origin: bottom;
+    animation: minute-second 60s linear infinite;
+}
+
+/* #checkbox:checked .second-hand {
+    transform: rotate(1deg);
+} */
